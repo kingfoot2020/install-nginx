@@ -1,3 +1,10 @@
+sudo apt update && sudo apt upgrade -y
+sudo apt install -y git build-essential ffmpeg libpcre3 libpcre3-dev libssl-dev zlib1g-dev
+git clone https://github.com/sergey-dryabzhinsky/nginx-rtmp-module.git
+wget http://nginx.org/download/nginx-1.18.0.tar.gz
+tar -xf nginx-1.18.0.tar.gz
+cd nginx-1.18.0/
+
 ./configure --prefix=/usr/share/nginx \
             --sbin-path=/usr/sbin/nginx \
             --modules-path=/usr/lib/nginx/modules \
@@ -38,3 +45,17 @@
             --with-stream_realip_module \
             --with-stream_ssl_module \
             --with-stream_ssl_preread_module \
+make -j 1
+sudo make install
+
+cd ..
+
+sudo rm /etc/nginx/nginx.conf
+sudo cp nginx.conf /etc/nginx/
+
+rm -r nginx-1.18.0 nginx-rtmp-module
+rm *.tar.gz
+
+sudo cp nginx.service /etc/systemd/system/
+
+sudo systemctl start nginx.service && sudo systemctl enable nginx.service
