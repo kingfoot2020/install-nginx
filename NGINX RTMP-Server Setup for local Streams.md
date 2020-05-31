@@ -1,0 +1,1 @@
+NGINX Compile with RTMP and relevant settings similar to installing from apt-get and automatic service creation
