@@ -21,6 +21,34 @@ sudo install install_nginx.sh
 ```
 
 ## Explanation
-To see what the Scripts do exactly or what the config does, look into the Files below.
+This script installs a rtmp-config which accepts Livestreams and accepts client-connections to play them.
+
+By default the following options are disabled in the configuration file nginx.conf but you can enable and alter them according to your scenario:
+
+### Publishing to Streaming-Service (i.e. Youtube):
+If you enable the push option, every published stream will also be pushed to the provided server, by default youtube.
+
+### local VLC Playback (i.e. on Raspberry Pi):
+The second option is very handy if you want to Livestream into the internet but have to also Stream into another Room/Location at your site where an audience is watching.
+
+The command after exec_publish will be executed when starting a livestream and will be killed on stop.
+
+### remote VLC Playback
+The Command can be altered to start the VLC-Window on another device if you use it with ssh.
+
+To get this running you will have to do some things first, replace username and remote-client with the values fitting your setup:
+
+```bash
+sudo -u www-data ssh-keygen -t rsa -b 4096
+sudo -u www-data ssh-copy-id username@remote-client
+
+```
+After that you can enable an option similar to this:
+```bash
+ssh -o "StrictHostKeyChecking no" user@remote-client "export DISPLAY=:0.0 && vlc -f --video-on-top --no-video-title-show --mouse-hide-timeout 1 rtmp://localhost/live/$name";
+```
+
+
+To see what the Scripts do exactly or what the config means, look into the Files below.
 
 
