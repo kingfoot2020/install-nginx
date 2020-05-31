@@ -32,6 +32,15 @@ Then Run the main Script:
 sudo install install_nginx.sh
 ```
 
+Publish from OBS or another Streaming-Device to the following URL (where hostname is the Name or IP of your server).
+```
+rtmp://hostname:1935/live
+```
+If you have an api-key for example to publish to youtube, either set it in your OBS or alter the URL like so:
+```
+rtmp://hostname:1935/live/your-api-key
+```
+
 ## Explanation
 This script installs a rtmp-config which accepts Livestreams and accepts client-connections to play them.
 
