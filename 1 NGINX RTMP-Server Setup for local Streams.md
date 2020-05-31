@@ -1,13 +1,17 @@
 # Compile NGINX with RTMP and setup Multi-Streaming
 These Scripts will install NGINX with the RTMP Module in the usual directories similar to installation with apt-get.
 
+
 The RTMP-Server you get with this can then be used to do one ore more of the following:
  - deliver streams in a local network
  - deliver streams to websites similar to youtube
  - transcode rtmp streams to hls video
  - publish to multiple streaming providers
  - record livestreams to a harddrive
- - many many more check the docu on [Nginx RTMP-Module](https://github.com/arut/nginx-rtmp-module/wiki/Directives)
+ - many, many more: Check the Docs on [Nginx RTMP-Module](https://github.com/arut/nginx-rtmp-module/wiki/Directives)
+
+
+And it also runs flawless on the Raspberry Pi 4!
 
 ## Installation
 If git is not present, install it: [Download Git](https://git-scm.com/downloads)
