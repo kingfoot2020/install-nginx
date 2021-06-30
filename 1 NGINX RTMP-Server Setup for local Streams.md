@@ -29,7 +29,7 @@ cd install_nginx
 
 Then Run the main Script:
 ```bash
-sudo install install_nginx.sh
+sudo install_nginx.sh
 ```
 
 ### Pulish to your new RTMP-Server:
