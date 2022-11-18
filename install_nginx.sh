@@ -3,7 +3,7 @@ sudo apt update && sudo apt upgrade -y
 # install build tools and NGINX requirements
 sudo apt install -y git build-essential ffmpeg libpcre3 libpcre3-dev libssl-dev zlib1g-dev
 # retrieve the latest RTMP-Module  git clone https://github.com/sergey-dryabzhinsky/nginx-rtmp-module.git
-git clone https://github.com/kingfoot2020/rtmp.git
+git clone https://github.com/kingfoot2020/nginx-rtmp-module.git
 # retrieve NGINX (if you want the latest release update this path according to the NGINX Website: http://nginx.org/en/download.html
 wget http://nginx.org/download/nginx-1.18.0.tar.gz
 # extract the .tar.gz archive
